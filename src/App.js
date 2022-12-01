@@ -1,11 +1,19 @@
-import './global.css'
-import HomePage from './pages/HomePage';
+import { BrowserRouter } from "react-router-dom";
+import RoutesApp from "./Routes";
+
+import HomePage from "./pages/HomePage";
+
+import "./global.css";
 
 function App() {
   return (
-    <div className='container-geral'>
-      <HomePage/>
-    </div>
+    <BrowserRouter>
+      <RoutesApp>
+        <div className="container-geral">
+          <HomePage />
+        </div>
+      </RoutesApp>
+    </BrowserRouter>
   );
 }
 

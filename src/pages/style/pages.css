@@ -6,3 +6,72 @@ main{
 main:last-child{
     margin-right: 10%;
 }
+
+.form-container{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 50vh;
+    width: 600px;
+    padding: 2%;
+}
+
+.data-cvc {
+    /* border: 1px solid blue; */
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date,
+.cvc-form {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#date,
+#cvc-form {
+    height: 65px;
+}
+
+.date {
+    margin-right: 4%;
+}
+
+.date label,
+.cvc-form label {
+    margin-bottom: 3%;
+}
+.section-complete{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 50vh;
+    width: 600px;
+    padding: 2%;
+}
+.section-complete img{
+    width: 25%;
+}
+.text-complete{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.text-complete > p{
+    font-size: 3rem;
+    letter-spacing: 2px;
+    color: #3B114C;
+}
+.text-complete > span{
+    font-size: 18px;
+    color: #6e6e6e;
+}

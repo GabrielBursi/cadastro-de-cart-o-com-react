@@ -1,5 +1,4 @@
 import Button from './Button';
-import './style/form.css'
 
 function Form() {
     return (
@@ -19,7 +18,7 @@ function Form() {
                         <input id="cvc-form" type="number"/>
                     </div>
                 </div>
-                <Button/>
+                <Button nav='/complete' text='Confirm'/>
             </div>
         </form>
     );

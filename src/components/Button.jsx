@@ -1,8 +1,9 @@
-import './style/button.css'
+import { useNavigate } from 'react-router-dom'
 
-function Button() {
+function Button({nav, text}) {
+    const navigate = useNavigate()
     return (
-        <button>Confirm</button>
+        <button onClick={() => navigate(`${nav}`)}>{text}</button>
     );
 }
 
