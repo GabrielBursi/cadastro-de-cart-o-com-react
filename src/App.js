@@ -4,15 +4,18 @@ import RoutesApp from "./Routes";
 import HomePage from "./pages/HomePage";
 
 import "./global.css";
+import FormProvider from "./context/FormContext";
 
 function App() {
   return (
     <BrowserRouter>
-      <RoutesApp>
-        <div className="container-geral">
-          <HomePage />
-        </div>
-      </RoutesApp>
+      <FormProvider>
+        <RoutesApp>
+          <div className="container-geral">
+            <HomePage />
+          </div>
+        </RoutesApp>
+      </FormProvider>
     </BrowserRouter>
   );
 }
