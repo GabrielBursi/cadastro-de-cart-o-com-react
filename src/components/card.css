@@ -23,7 +23,8 @@ aside{
     /* border: 3px solid blue; */
     width: 65%;
     height: 35%;
-    box-shadow: 7px 5px 5px rgba(77, 76, 76, 0.5);
+    box-shadow: 5px 7px 10px rgba(77, 76, 76, 0.651);
+    border-radius: 15px;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -68,7 +69,19 @@ aside{
     justify-content: space-between;
     align-items: center;
     height: 15%;
-    font-size: 18px;
+    font-size: 22px;
     padding: 5% 13%;
     /* border: 3px solid red; */
+}
+.cvc{
+    /* border: 1px solid red; */
+    width: 20%;
+    height: 15%;
+    position: relative;
+    left: 70%;
+    top: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
 }

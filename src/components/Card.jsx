@@ -19,7 +19,9 @@ function Card() {
                 </div>
                 
                 <div className='card-back'>
-
+                    <div className="cvc">
+                        <span>123</span>
+                    </div>
                 </div>
             </div>
         </aside>
