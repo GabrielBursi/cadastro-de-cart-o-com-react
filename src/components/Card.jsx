@@ -1,5 +1,5 @@
 import Logo from "../images/card-logo.svg";
-import './card.css'
+import './style/card.css'
 
 function Card() {
     return (

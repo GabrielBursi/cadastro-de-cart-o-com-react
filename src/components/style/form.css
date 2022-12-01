@@ -1,0 +1,33 @@
+.form-container{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 50vh;
+    width: 600px;
+    padding: 2%;
+}
+.data-cvc{
+    /* border: 1px solid blue; */
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.date,.cvc-form{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#date,#cvc-form{
+    height: 65px;
+}
+.date{
+    margin-right: 4%;
+}
+.date label,
+.cvc-form label{
+    margin-bottom: 3%;
+}

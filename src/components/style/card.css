@@ -1,14 +1,15 @@
 aside{
-    background-image: url('../images/bg-main-desktop.png');
+    background-image: url('../../images/bg-main-desktop.png');
     background-repeat: no-repeat;
     background-size: cover;
-    width: 35%;
+    min-width: 780px;
     height: 100vh;
+    /* border: 3px solid red; */
 }
 
 .container-cards{
     /* border: 3px solid red; */
-    width: 120%;
+    min-width: 780px;
     height: 80%;
     position: relative;
     top: 10%;
@@ -33,14 +34,14 @@ aside{
 
 .card-front{
     right: 5%;
-    background-image: url('../images/bg-card-front.png');
+    background-image: url('../../images/bg-card-front.png');
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 .card-back{
     left: 5%;
-    background-image: url('../images/bg-card-back.png');
+    background-image: url('../../images/bg-card-back.png');
 }
 
 .icon{
