@@ -12,8 +12,8 @@ main:last-child{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 50vh;
-    width: 600px;
+    height: 60vh;
+    width: 650px;
     padding: 2%;
 }
 
@@ -38,11 +38,15 @@ main:last-child{
 #cvc-form {
     height: 65px;
 }
-
-.date {
+.inputs-my{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.date input{
+    width: 50%;
     margin-right: 4%;
 }
-
 .date label,
 .cvc-form label {
     margin-bottom: 3%;
@@ -53,8 +57,8 @@ main:last-child{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 50vh;
-    width: 600px;
+    height: 60vh;
+    width: 650px;
     padding: 2%;
 }
 .section-complete img{
