@@ -17,7 +17,10 @@ function Form() {
         return e === '';
     }
 
-
+    function getInputs() {
+        const inputsNodeList = document.querySelectorAll("input");
+        return inputsNodeList
+    }
     return (
         <form>
             <div className="form-container">
@@ -73,7 +76,7 @@ function Form() {
                         }}/>
                     </div>
                 </div>
-                <Button nav='/complete' text='Confirm'/>
+                <Button nav='/complete' text='Confirm' inputs={getInputs}/>
             </div>
         </form>
     );
