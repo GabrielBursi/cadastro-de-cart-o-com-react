@@ -31,14 +31,7 @@ function Form() {
     }
 
     function formatName(e){
-        setName(e.target.value);
-        if(e.code === "Space"){
-            const firstLetter = (e.target.value.slice(0, 1)).toUpperCase()
-            const restWord = e.target.value.slice(1)
-            const fullWord = firstLetter + restWord
-            e.target.value = fullWord
-            setName(fullWord)
-        }
+        setName((e.target.value).toUpperCase());
     }
 
     function getInputs() {
