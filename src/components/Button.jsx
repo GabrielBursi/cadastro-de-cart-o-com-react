@@ -21,7 +21,7 @@ function Button({nav, text, inputs}) {
     function showInputEmpty(valueEmpty, valueNotEmpty){
         valueEmpty[0].focus()
         valueEmpty.forEach(element => {
-            element.style.borderColor = "#FF8A8A";
+            element.style.borderColor = "#FF2E2E";
         });
         valueNotEmpty.forEach(element => {
             element.style.borderColor = "#bbbbbb";

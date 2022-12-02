@@ -17,7 +17,7 @@ function Form() {
     function isEmpty(e){
         return e === '';
     }
-
+    
     function filterInput(e){
         const regexStr = /^[a-zA-Z\s]+$/
         if(!e.target.value.match(regexStr)){
@@ -30,6 +30,17 @@ function Form() {
         }
     }
 
+    function formatName(e){
+        setName(e.target.value);
+        if(e.code === "Space"){
+            const firstLetter = (e.target.value.slice(0, 1)).toUpperCase()
+            const restWord = e.target.value.slice(1)
+            const fullWord = firstLetter + restWord
+            e.target.value = fullWord
+            setName(fullWord)
+        }
+    }
+
     function getInputs() {
         const inputsNodeList = document.querySelectorAll("input");
         return inputsNodeList
@@ -39,12 +50,12 @@ function Form() {
         <form>
             <div className="form-container">
                 <label htmlFor="cardholder">CARDHOLDER NAME</label>
-                <input id="cardholder" type="text" autoComplete='off' placeholder='ex: Gabriel Bursi' onChange={(e) => {
+                <input id="cardholder" type="text" autoComplete='off' placeholder='ex: Gabriel Bursi' onKeyUp={(e) => {
                         if(isEmpty(e.target.value)) {
                             setName('Gabriel Bursi')
                         }else{
                             filterInput(e);
-                            setName(e.target.value)
+                            formatName(e)
                         }
                     }}/>
                 <label htmlFor="card-number">CARD NUMBER</label>
