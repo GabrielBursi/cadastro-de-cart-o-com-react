@@ -15,7 +15,7 @@ function Complete() {
     } = useContext(FormContext);
 
     function reset(){
-        setName("Gabriel Bursi")
+        setName("GABRIEL BURSI")
         setNumber("0000 0000 0000 0000");
         setMounth('00')
         setYear('00')
