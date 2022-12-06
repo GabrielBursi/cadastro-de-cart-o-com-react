@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-operators */
 /* eslint-disable default-case */
 import { useContext } from 'react';
 import { FormContext } from '../context/FormContext';
@@ -5,9 +6,9 @@ import { FormContext } from '../context/FormContext';
 import Button from './Button';
 
 function Form() {
-
+    
     const { setName, setNumber, setMounth, setYear, setCVC } = useContext(FormContext);
-
+    
     const regexStr = /^[a-zA-Z\s]+$/;
     const regexNum = /^[0-9]+$/;
 
@@ -54,6 +55,24 @@ function Form() {
         }
     }
 
+    function formatNumber(e){
+        const value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '')
+        const matches = value.match(/\d{4,16}/g);
+        const match = matches && matches[0] || ''
+        const parts = []
+
+        for (let i=0, len=match.length; i<len; i+=4) {
+            parts.push(match.substring(i, i+4))
+        }
+
+        if (parts.length) {
+            const numberCard = parts.join(' ')
+            setNumber(numberCard)
+        } else {
+            return value
+        }
+    }
+
     function getInputs() {
         const inputsNodeList = document.querySelectorAll("input");
         return inputsNodeList
@@ -77,9 +96,9 @@ function Form() {
                     type="text" 
                     placeholder='0000 0000 0000 0000' 
                     minLength={16} 
-                    maxLength={19} 
+                    maxLength={16} 
                     autoComplete='off' 
-                    onChange={(e) => {setInputs(e, setNumber, regexNum, "0000 0000 0000 0000");}}
+                    onChange={(e) => {setInputs(e, setNumber, regexNum, "0000 0000 0000 0000"); formatNumber(e)}}
                 />
                 <div className="data-cvc">
                     <div className='date'>
