@@ -9,7 +9,7 @@ function Complete() {
     const {
         setName,
         setNumber,
-        setMounth,
+        setMonth,
         setYear,
         setCVC,
     } = useContext(FormContext);
@@ -17,7 +17,7 @@ function Complete() {
     function reset(){
         setName("GABRIEL BURSI")
         setNumber("0000 0000 0000 0000");
-        setMounth('00')
+        setMonth('00')
         setYear('00')
         setCVC('123')
         return [{value: " "}]

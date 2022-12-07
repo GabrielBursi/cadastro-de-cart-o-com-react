@@ -7,7 +7,7 @@ import Button from './Button';
 
 function Form() {
     
-    const { setName, setNumber, setMounth, setYear, setCVC } = useContext(FormContext);
+    const { setName, setNumber, setMonth, setYear, setCVC } = useContext(FormContext);
     
     const regexStr = /^[a-zA-Z\s]+$/;
     const regexNum = /^[0-9]+$/;
@@ -111,7 +111,7 @@ function Form() {
                                 minLength={2} 
                                 maxLength={2} 
                                 autoComplete='off'
-                                onChange={(e) => {setInputs(e, setMounth, regexNum, "00")}}
+                                onChange={(e) => {setInputs(e, setMonth, regexNum, "00")}}
                             />
                             <input 
                                 id="date" 

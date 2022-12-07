@@ -42,3 +42,7 @@ button{
 button:hover {
     background-color: #6338E6;
 }
+
+.errado{
+    border: 0.5px solid #FF2E2E;
+}

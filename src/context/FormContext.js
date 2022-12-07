@@ -6,7 +6,7 @@ function FormProvider({children}) {
 
     const [name, setName] = useState("GABRIEL BURSI");
     const [number, setNumber] = useState("0000 0000 0000 0000");
-    const [mounth, setMounth] = useState("00");
+    const [month, setMonth] = useState("00");
     const [year, setYear] = useState("00");
     const [cvc, setCVC] = useState("123");
 
@@ -15,7 +15,7 @@ function FormProvider({children}) {
             value = {{
                 name, setName,
                 number, setNumber,
-                mounth, setMounth,
+                month, setMonth,
                 year, setYear,
                 cvc,setCVC
             }}

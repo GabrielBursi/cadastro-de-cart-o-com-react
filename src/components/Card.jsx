@@ -9,7 +9,7 @@ function Card() {
     const {
         name,
         number,
-        mounth,
+        month,
         year,
         cvc,
     } = useContext(FormContext);
@@ -26,7 +26,7 @@ function Card() {
                     </div>
                     <div className='nome-data'>
                         <span>{name}</span>
-                        <span>{mounth}/{year}</span>
+                        <span>{month}/{year}</span>
                     </div>
                 </div>
                 
