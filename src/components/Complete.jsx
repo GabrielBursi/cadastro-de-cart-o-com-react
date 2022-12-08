@@ -13,42 +13,23 @@ function Complete() {
         month,
         year,
         cvc,
-        infoCard,
-        setInfoCard,
         setName,
         setNumber,
         setMonth,
         setYear,
-        setCVC
+        setCVC,
     } = useContext(FormContext);
 
     useEffect(() => {
-        setLocalInfoCard();
-    }, [infoCard]);
-
-    function setLocalInfoCard() {
-        localStorage.setItem("cardInfo", JSON.stringify(infoCard));
-    }
-
-    function setLocalStorage(e){
-        const infos = {
-            name,
-            number,
-            month,
-            year,
-            cvc,
-        }
-        setInfoCard(infos)
-        e.target.textContent = 'Prontinho !';
-    }
+        setName(name)
+        setNumber(number)
+        setMonth(month)
+        setYear(year)
+        setCVC(cvc)
+    }, []);
 
     function reset(){
-        setName("GABRIEL BURSI");
-        setNumber("0000 0000 0000 0000");
-        setMonth("00");
-        setYear("00");
-        setCVC("123");
-        return [{value: " "}]
+        return [{ value: " " }];
     }
 
     return (
@@ -58,7 +39,6 @@ function Complete() {
                 <p>THANK YOU!</p>
                 <span>We've added your card details</span>
             </div>
-            <button onClick={setLocalStorage}>Quer salvar seus dados ?</button>
             <Button nav='/' text='Continue' inputs={reset} />
         </section>
     );

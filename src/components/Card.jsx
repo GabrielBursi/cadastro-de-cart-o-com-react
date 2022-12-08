@@ -13,15 +13,21 @@ function Card() {
         month,
         year,
         cvc,
+        infoCard,
         setName,
         setNumber,
         setMonth,
         setYear,
         setCVC,
+        setInfoCard
     } = useContext(FormContext);
 
     useEffect(() => {
         getLocalInfoCard();
+    }, []);
+
+    useEffect(() => {
+        setLocalInfoCard();
     }, []);
 
     function getLocalInfoCard() {
@@ -31,12 +37,26 @@ function Card() {
         } else {
             localInfosCard = JSON.parse(localInfosCard);
             const { name, number, month, year, cvc } = localInfosCard;
-            setName(name);
-            setNumber(number);
-            setMonth(month);
-            setYear(year);
-            setCVC(cvc);
+            
+            setName(name ? name : 'GABRIEL BURSI');
+            setNumber(number ? number : "0000 0000 0000 0000");
+            setMonth(month ? month : "00");
+            setYear(year ? year : "00");
+            setCVC(cvc ? cvc : "123");
         }
+    }
+
+
+    function setLocalInfoCard() {
+        const infos = {
+            name,
+            number,
+            month,
+            year,
+            cvc,
+        };
+        setInfoCard(infos);
+        localStorage.setItem("cardInfo", JSON.stringify(infoCard));
     }
 
     return (

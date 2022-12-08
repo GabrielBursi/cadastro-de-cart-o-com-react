@@ -19,7 +19,7 @@ function FormProvider({children}) {
                 month, setMonth,
                 year, setYear,
                 cvc,setCVC,
-                infoCard, setInfoCard
+                infoCard, setInfoCard,
             }}
         >
             {children}
