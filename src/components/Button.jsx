@@ -1,7 +1,7 @@
 /* eslint-disable default-case */
 import { useNavigate } from 'react-router-dom'
 
-function Button({nav, text, inputs}) {
+function Button({nav, text, inputs }) {
 
     const navigate = useNavigate()
 

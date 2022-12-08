@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-mixed-operators */
 /* eslint-disable default-case */
 import { useContext } from 'react';

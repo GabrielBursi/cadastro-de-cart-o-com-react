@@ -9,6 +9,7 @@ function FormProvider({children}) {
     const [month, setMonth] = useState("00");
     const [year, setYear] = useState("00");
     const [cvc, setCVC] = useState("123");
+    const [infoCard, setInfoCard] = useState({});
 
     return (
         <FormContext.Provider 
@@ -17,7 +18,8 @@ function FormProvider({children}) {
                 number, setNumber,
                 month, setMonth,
                 year, setYear,
-                cvc,setCVC
+                cvc,setCVC,
+                infoCard, setInfoCard
             }}
         >
             {children}

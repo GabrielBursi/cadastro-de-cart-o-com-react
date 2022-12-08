@@ -1,4 +1,5 @@
-import { useContext } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useContext, useEffect } from 'react';
 import { FormContext } from '../context/FormContext';
 
 import Logo from "../images/card-logo.svg";
@@ -12,7 +13,31 @@ function Card() {
         month,
         year,
         cvc,
+        setName,
+        setNumber,
+        setMonth,
+        setYear,
+        setCVC,
     } = useContext(FormContext);
+
+    useEffect(() => {
+        getLocalInfoCard();
+    }, []);
+
+    function getLocalInfoCard() {
+        let localInfosCard = localStorage.getItem("cardInfo");
+        if (localInfosCard === null) {
+            localStorage.setItem("cardInfo", JSON.stringify({}));
+        } else {
+            localInfosCard = JSON.parse(localInfosCard);
+            const { name, number, month, year, cvc } = localInfosCard;
+            setName(name);
+            setNumber(number);
+            setMonth(month);
+            setYear(year);
+            setCVC(cvc);
+        }
+    }
 
     return (
         <aside>
