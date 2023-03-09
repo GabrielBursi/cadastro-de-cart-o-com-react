@@ -92,3 +92,9 @@ aside{
     align-items: center;
     font-size: 22px;
 }
+
+.error-input{
+    color: rgb(255, 63, 63);
+    margin-left: 2%;
+    font-size: 0.8rem;
+}

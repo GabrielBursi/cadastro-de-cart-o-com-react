@@ -7,57 +7,32 @@ import './style/card.css'
 
 function Card() {
 
-    const {
-        name,
-        number,
-        month,
-        year,
-        cvc,
-        infoCard,
-        setName,
-        setNumber,
-        setMonth,
-        setYear,
-        setCVC,
-        setInfoCard
-    } = useContext(FormContext);
+    const { 
+            preName, 
+            preNumber, 
+            preMonth, 
+            preYear, 
+            preCvc, 
+            setPreName, 
+            setPreNumber, 
+            setPreMonth, 
+            setPreYear, 
+            setPreCVC, 
+            changedLocalStorage 
+        } = useContext(FormContext);
 
     useEffect(() => {
-        getLocalInfoCard();
-    }, []);
+        const userLocalStorage = localStorage.getItem('user')
+        if(!userLocalStorage) return
 
-    useEffect(() => {
-        setLocalInfoCard();
-    }, []);
+        const userInfo = JSON.parse(userLocalStorage)
 
-    function getLocalInfoCard() {
-        let localInfosCard = localStorage.getItem("cardInfo");
-        if (localInfosCard === null) {
-            localStorage.setItem("cardInfo", JSON.stringify({}));
-        } else {
-            localInfosCard = JSON.parse(localInfosCard);
-            const { name, number, month, year, cvc } = localInfosCard;
-            
-            setName(name ? name : 'GABRIEL BURSI');
-            setNumber(number ? number : "0000 0000 0000 0000");
-            setMonth(month ? month : "00");
-            setYear(year ? year : "00");
-            setCVC(cvc ? cvc : "123");
-        }
-    }
-
-
-    function setLocalInfoCard() {
-        const infos = {
-            name,
-            number,
-            month,
-            year,
-            cvc,
-        };
-        setInfoCard(infos);
-        localStorage.setItem("cardInfo", JSON.stringify(infoCard));
-    }
+        setPreName(userInfo.name)
+        setPreNumber(userInfo.number)
+        setPreMonth(userInfo.month)
+        setPreYear(userInfo.year)
+        setPreCVC(userInfo.cvc)
+    }, [changedLocalStorage]);
 
     return (
         <aside>
@@ -67,17 +42,17 @@ function Card() {
                         <img src={Logo} alt='logo'/>
                     </div>
                     <div className='numero'>
-                        <p>{number}</p>
+                        <p>{preNumber}</p>
                     </div>
                     <div className='nome-data'>
-                        <span>{name}</span>
-                        <span>{month}/{year}</span>
+                        <span>{preName}</span>
+                        <span>{preMonth}/{preYear}</span>
                     </div>
                 </div>
                 
                 <div className='card-back'>
                     <div className="cvc">
-                        <span>{cvc}</span>
+                        <span>{preCvc}</span>
                     </div>
                 </div>
             </div>

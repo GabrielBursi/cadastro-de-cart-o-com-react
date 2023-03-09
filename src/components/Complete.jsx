@@ -4,15 +4,13 @@ import { FormContext } from "../context/FormContext";
 
 import Button from './Button';
 import CompleteLogo from "../images/icon-complete.svg";
+import { useNavigate } from "react-router-dom";
 
 function Complete() {
 
+    const navigate = useNavigate()
+
     const {
-        name,
-        number,
-        month,
-        year,
-        cvc,
         setName,
         setNumber,
         setMonth,
@@ -21,16 +19,13 @@ function Complete() {
     } = useContext(FormContext);
 
     useEffect(() => {
-        setName(name)
-        setNumber(number)
-        setMonth(month)
-        setYear(year)
-        setCVC(cvc)
+        setName('')
+        setNumber('')
+        setMonth('')
+        setYear('')
+        setCVC('')
     }, []);
 
-    function reset(){
-        return [{ value: " " }];
-    }
 
     return (
         <section className='section-complete'>
@@ -39,7 +34,7 @@ function Complete() {
                 <p>THANK YOU!</p>
                 <span>We've added your card details</span>
             </div>
-            <Button nav='/' text='Continue' inputs={reset} />
+            <Button text='Continue' handleSubmit={() => navigate('/')}/>
         </section>
     );
 }
